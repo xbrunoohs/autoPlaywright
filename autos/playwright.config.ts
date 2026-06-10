@@ -1,4 +1,6 @@
+import 'dotenv/config';
 import { defineConfig, devices } from '@playwright/test';
+
 
 export default defineConfig({
   testDir: './tests',
@@ -30,6 +32,8 @@ export default defineConfig({
 
     // Captura vídeo ao falhar
     video: 'retain-on-failure',
+
+    baseURL: process.env.BASE_URL,
   },
 
   projects: [
